@@ -39,6 +39,24 @@
 ## 5.5. Dependency and enviroment management: Pipenv
 
 * Why we need virtual enviroment
+
 * Installing Pipenv
+    * pip install pipenv
+
 * Installing libreries with Pipenv
+    * 'pipenv' install -libraries- (instead of 'pip') -> this create a virtual environment
+        * A pipfile and pipfile.lock are automatically created
+            * Pipfile has the requierements (packages, versions, etc).
+            * Pipfile.lock is a big json file which has the versions of all dependencies.
+
 * Running things with Pipenv
+    * pipenv shell to activate - exit to deasactivate the pipenv
+        * pipenv --rm to eliminate the venv
+    * waitress-serve --listen 0.0.0.0:9696 predict:app
+
+
+## 5.6. Environment management: Docker
+* Why we need Docker
+* Running a Python image with docker
+* Dockerfile
+* Building a docker image

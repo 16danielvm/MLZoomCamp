@@ -106,3 +106,9 @@
 * Dockerfile
 * Building a docker image
 * Running a docker image
+
+## 5.7. Deployment to the cloud: AWS Elastic Beanstalk (optional)
+
+* Installing the eb cli
+* Runnning eb locally
+* Deploying the model

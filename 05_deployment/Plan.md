@@ -54,9 +54,55 @@
         * pipenv --rm to eliminate the venv
     * waitress-serve --listen 0.0.0.0:9696 predict:app
 
-
 ## 5.6. Environment management: Docker
 * Why we need Docker
+
 * Running a Python image with docker
+    * First INSTALL DOCKER!! Ask to chatGPT how to do that xd
+    * Initialize DOCKER DESKTOP after installing it
+    * docker run -it --rm  python:3.10-slim(THE IMAGE)
+    
+    * docker run -it --rm --entrypoint=bash python:3.10-slim --> this is for entry as command line
+        * apt-get update
+        * apt-get install wget
+        * mkdir test
+            * pip install pipenv
+    * docker run -it --rm --entrypoint=bash python:3.10-slim
+        * mkdir app
+
+    * Create Dockerfile 
+        * FROM python:3.10-slim
+        * RUN pip install pipenv
+        * WORKDIR /app
+        * COPY ["Pipfile", "Pipfile.lock", "./"]
+
+    * "docker build -t zoomcamp-test ."
+        * Docker build: Initiates the process of building a Docker image.
+        * t zoomcamp-test: Assigns a name (tag) to the resulting image. In this case, the image will be tagged as zoomcamp-test.
+        * .: Specifies the build context. The dot (.) indicates that Docker should look for the Dockerfile in the current directory."
+    * docker run -it --rm --entrypoint=bash zoomcamp-test
+        * pipenv install
+    
+    * Dockerfile:
+        *RUN pipenv install --system --deploy
+    
+    * docker build -t zoomcamp-test .
+
+    * Dockerfile:
+        * COPY ["predict.py", "model_C=1.0.bin", "./"]
+
+    * docker build -t zoomcamp-test .
+
+    * docker run -it --rm --entrypoint=bash zoomcamp-test
+        * waitress-serve --listen 0.0.0.0:9696 predict:app
+    
+    * Dockerfile:
+        * EXPOSE 9696
+        * ENTRYPOINT ["waitress-serve", "--listen 0.0.0.0:9696", "predict:app"]
+    
+    * docker build -t zoomcamp-test .
+    * docker run -it --rm -p 9696:9696 zoomcamp-test
+
 * Dockerfile
 * Building a docker image
+* Running a docker image

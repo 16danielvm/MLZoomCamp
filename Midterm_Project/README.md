@@ -1,4 +1,6 @@
-# * **Heart Attack Risk Analysis** *
+\begin{center}
+# *Heart Attack Risk Analysis*
+\end{center}
 
 
 ## Problem Description

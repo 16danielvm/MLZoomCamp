@@ -97,7 +97,7 @@ To serve the model with Docker:
         - Once installed, look for Docker Desktop in your start menu and run it.
     
     - *Verify the Installation:*
-        - Open a terminal (such as PowerShell or Command Prompt) and run the following command to verify that Docker is installed correctly:
+        - Open a terminal and run the following command to verify that Docker is installed correctly:
         
             ```bash
             docker --version

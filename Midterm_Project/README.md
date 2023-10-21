@@ -51,3 +51,19 @@ Take a thorough look at the characteristics presented in the dataset, including 
 
 ## Getting Started
 
+This is a set of instructions on setting up this project locally. To get a local copy up and running follow these simple example steps.
+
+Prerequisites This is an example of how to list things you need to use this software.
+
+- Python
+- Pipenv
+- Docker 
+
+### Installing Dependencies
+
+Youc can install the dependencies with pipenv, as they are specified in the 'Pipfile' and 'Pipfile.lock', by running the following commands:
+
+'''
+pipenv install
+pipenv shell
+'''

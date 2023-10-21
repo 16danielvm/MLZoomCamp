@@ -1,6 +1,6 @@
-\begin{center}
-# *Heart Attack Risk Analysis*
-\end{center}
+
+# <center>  *Heart Attack Risk Analysis* </center>
+
 
 
 ## Problem Description

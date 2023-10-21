@@ -61,7 +61,7 @@ Prerequisites This is an example of how to list things you need to use this soft
 
 ### Installing Dependencies
 
-Youc can install the dependencies with pipenv, as they are specified in the `Pipfile` and `Pipfile.lock`, by running the following commands:
+You can install the dependencies with pipenv, as they are specified in the `Pipfile` and `Pipfile.lock`, by running the following commands:
 
 ```
 pipenv install

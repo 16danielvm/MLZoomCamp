@@ -67,3 +67,68 @@ Youc can install the dependencies with pipenv, as they are specified in the `Pip
 pipenv install
 pipenv shell
 ```
+
+### Building the model
+
+You have the option to execute either the `train.py` file  to carry out all the necessary steps for training the final model used in this project.
+
+To initiate the model training, you can use the following command:
+
+```
+python train.py
+```
+
+### Serving the model (Locally)
+
+To serve the model with Docker:
+
+1. First install docker:
+
+    - **Download Docker Desktop:**
+        - Visit the official Docker website: [Docker Desktop](https://www.docker.com/products/docker-desktop).
+        - Click on the "Get Docker Desktop for Windows" button.
+        - You will be redirected to the download page. Download the installation file here.
+
+    - **Install Docker Desktop:**
+        - Run the installation file you just downloaded.
+        - Follow the installer instructions to complete the installation.
+
+    - **Launch Docker Desktop:**
+        - Once installed, look for Docker Desktop in your start menu and run it.
+    
+    - **Verify the Installation:**
+        - Open a terminal (such as PowerShell or Command Prompt) and run the following command to verify that Docker is installed correctly:
+        
+            ```bash
+            docker --version
+            ```
+        - You can also run:
+            ```bash
+            docker run hello-world
+            ```
+        - This will download a small image, run it, and you should see a message indicating that Docker is working correctly.
+    
+    And that's it! Now you should have Docker installed and ready to use on your Windows system.
+
+2. Initialize DOCKER DESKTOP after installing it:
+
+    - Maybe it asks you to update wsl. Open your terminal and run the following command:
+        ```bash
+        wsl --update
+        ```
+
+3. Build the Docker image and run it:
+
+    - **Build the Docker image**
+        ```
+        docker build -t zoomcamp-midterm-project.
+        ```
+        
+    - This command builds a Docker image from the provided files.
+
+    - **Run the previous image**
+        ```
+        docker run -it --rm -p 9696:9696 zoomcamp-midterm-project
+        ```
+    - This command runs a container based on the previously built image. Maps port 9696 on the host system to port 9696 on the container. This is important if the application inside the container is listening on port 9696.
+

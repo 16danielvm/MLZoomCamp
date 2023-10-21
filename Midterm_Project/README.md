@@ -82,21 +82,21 @@ python train.py
 
 To serve the model with Docker:
 
-1. First install docker:
+1. **First install docker:**
 
-    - **Download Docker Desktop:**
+    - *Download Docker Desktop:*
         - Visit the official Docker website: [Docker Desktop](https://www.docker.com/products/docker-desktop).
         - Click on the "Get Docker Desktop for Windows" button.
         - You will be redirected to the download page. Download the installation file here.
 
-    - **Install Docker Desktop:**
+    - *Install Docker Desktop:*
         - Run the installation file you just downloaded.
         - Follow the installer instructions to complete the installation.
 
-    - **Launch Docker Desktop:**
+    - *Launch Docker Desktop:*
         - Once installed, look for Docker Desktop in your start menu and run it.
     
-    - **Verify the Installation:**
+    - *Verify the Installation:*
         - Open a terminal (such as PowerShell or Command Prompt) and run the following command to verify that Docker is installed correctly:
         
             ```bash
@@ -110,25 +110,32 @@ To serve the model with Docker:
     
     And that's it! Now you should have Docker installed and ready to use on your Windows system.
 
-2. Initialize DOCKER DESKTOP after installing it:
+2. **Click and initialize the DOCKER DESKTOP app after installing it:**
 
     - Maybe it asks you to update wsl. Open your terminal and run the following command:
         ```bash
         wsl --update
         ```
 
-3. Build the Docker image and run it:
+3. **Build the Docker image and run it:**
 
-    - **Build the Docker image**
+    - *Build the Docker image*
         ```
         docker build -t zoomcamp-midterm-project.
         ```
         
-    - This command builds a Docker image from the provided files.
+        - This command builds a Docker image from the provided files.
 
-    - **Run the previous image**
+    - *Run the previous image*
         ```
         docker run -it --rm -p 9696:9696 zoomcamp-midterm-project
         ```
-    - This command runs a container based on the previously built image. Maps port 9696 on the host system to port 9696 on the container. This is important if the application inside the container is listening on port 9696.
+        - This command runs a container based on the previously built image. Maps port 9696 on the host system to port 9696 on the container. This is important if the application inside the container is listening on port 9696.
 
+### Testing the model
+
+Finally, you can test the model. Serving the model locally, open another terminal, and:
+
+    ```
+    python predict_test.py
+    ```

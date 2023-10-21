@@ -16,7 +16,7 @@ Early prediction of cardiovascular risk can be crucial for informed medical deci
 
 ## Data
 
-The data used in this project is used from [Heart Attack Risk Analysis competition] (https://kaggle.com/competitions/heart-attack-risk-analysis) from [Kaggle] (https://www.kaggle.com/)
+The data used in this project is used from [Heart Attack Risk Analysis competition](https://kaggle.com/competitions/heart-attack-risk-analysis) from [Kaggle](https://www.kaggle.com/)
 
 
 ## Getting Started

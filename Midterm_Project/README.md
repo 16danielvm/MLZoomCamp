@@ -1,5 +1,5 @@
 
-# <center>  *Heart Attack Risk Analysis* </center>
+# <p style="text-align:center"> *Heart Attack Risk Analysis* </p>
 
 
 

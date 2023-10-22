@@ -32,7 +32,7 @@ Take a thorough look at the characteristics presented in the dataset, including 
 | eye movement | Indicates ocular activity during sleep |
 | sleeping hours | Represents the total number of sleep hours recorded |
 | heart rate | Indicates the heart rate during sleep |
-| stress level | Reflects the detected level of stress during the sleep period |
+| stress level | Reflects the detected level of stress during the sleep period (0- low/normal, 1 – medium low, 2- medium, 3-medium high, 4 -high) |
 
 ## Getting Started
 

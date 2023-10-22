@@ -1,53 +1,38 @@
 
-# *Heart Attack Risk Analysis* 
+# *Human Stress Detection in and through Sleep* 
 
 ## Problem Description
 
-This project originates from a Kaggle competition with a crucial objective: predicting the risk of a patient experiencing a heart attack. Cardiovascular health is a global concern, and the ability to anticipate potential cardiovascular events can be a determining factor for early medical intervention and prevention.
+The project addresses the issue of detecting stress in humans during the sleep period. It is based on a Kaggle dataset with the primary goal of predicting an individual's stress level. This challenge stems from the necessity to understand and tackle the impact of stress on health, particularly during rest hours.
 
 ### Context 
 
-The dataset encompasses a wide range of features pertinent to heart health and lifestyle choices, covering patient-specific details such as age, gender, cholesterol levels, blood pressure, heart rate, and factors like diabetes, family history, smoking habits, obesity, and alcohol consumption. Additionally, it includes lifestyle elements such as exercise hours, dietary patterns, stress levels, and sedentary hours. Medical aspects, including prior heart issues, medication usage, and triglyceride levels, are taken into account. Socioeconomic factors like income and geographical attributes such as country, continent, and hemisphere are also integrated.
+El proyecto se beneficia de los datos recopilados en el marco del proyecto de investigación [SaYoPillow](L. Rachakonda, S. P. Mohanty, E. Kougianos, K. Karunakaran, and M. Ganapathiraju, “Smart-Pillow: An IoT based Device for Stress Detection Considering Sleeping Habits”, in Proceedings of the 4th IEEE International Symposium on Smart Electronic Systems (iSES), 2018, pp. 161--166.), un dispositivo basado en IoT diseñado para la detección de estrés, teniendo en cuenta los hábitos de sueño.
+
+El contexto proporciona un fundamento sólido para nuestro enfoque, ya que aprovechamos los avances y la experiencia acumulada por SaYoPillow. Utilizamos los parámetros recopilados por este proyecto como punto de partida para desarrollar un modelo de predicción de estrés más amplio y aplicable.
 
 ### Significance
 
-Early prediction of cardiovascular risk can be crucial for informed medical decision-making. If this model can identify significant patterns and correlations in the data, it could become a valuable tool for healthcare professionals. Furthermore, the ability to efficiently perform risk assessments could enhance resource allocation and personalized care for patients.
+The significance of this project lies in its contribution to understanding and addressing stress in the context of human sleep. The aim is to advance the ability to predict and manage stress during sleep. This work not only has implications for improving sleep quality but also for the overall management of stress, positively impacting the health and well-being of individuals.
 
 
 ## Data
 
-The data used in this project is the [Heart Attack Risk Analysis competition](https://kaggle.com/competitions/heart-attack-risk-analysis) dataset, which can be found in [Kaggle](https://www.kaggle.com/).
+The data used in this project is from [Human Stress Detection in and thorough Sleep](https://www.kaggle.com/datasets/laavanya/human-stress-detection-in-and-through-sleep?select=SaYoPillow.csv) dataset, which can be found in [Kaggle](https://www.kaggle.com/).
 
 Take a thorough look at the characteristics presented in the dataset, including their descriptions and the unit of measurement, if relevant.
 
 | Feature Name | Feature Description |
 | :----------: | :-----------------: |
-| Patient ID   | Unique identifier for each patient |
-| Age          | Age of the patient  |
-| Sex | Gender of the patient (Male/Female) |
-| Cholesterol | Cholesterol levels of the patient |
-| Blood Pressure | Blood pressure of the patient (systolic/diastolic) |
-| Heart Rate | Heart rate of the patient |
-| Diabetes | Whether the patient has diabetes (Yes/No) |
-| Family History | Family History of the heart-related problems (1: Yes, 0: No) |
-| Smoking | Smoking status of the patient (1: Smoker, 0: Non-smoker) |
-| Obesity | Obesity status of the patient (1: Obese, 0: Not obese) |
-| Alcohol Consumption | Level of alcohol consumption by the patient (None/Light/Moderate/Heavy) |
-| Exercise Hours Per Week | Number of exercise hours per week |
-| Diet | Dietary habits of the patient (Healthy/Average/Unhealthy) |
-| Previous Heart Problems | Previous heart problems of the patient (1: yes, 0: No) |
-| Medication Use | Medication usage by the patient (1: Yes, 0: No) |
-| Stress Level | Stress level reported by the patient (1-10) |
-| Sedentary Hours Per Day | Hours of sedentary activity per day|
-| Income | Income level of the patient | 
-| BMI | Body Mass Index (BMI) of the patient | 
-| Triglycerides | Triglyceride levels of the patient |
-| Physical Activity Days Per Week | Days of physical activity per week | 
-| Sleep Hours Per Day | Hourse of sleed day | 
-| Country | Country of the patient | 
-| Continent | Continent where the patient resides | 
-| Hemisphere | Hemisphere where the patient resides | 
-| Heart Attack Risk | Presence of heart attack risk (1: Yes, 0: No) |
+| snoring rate   | Represents intensity of snoring |
+| respiration rate | Indicates frequency of breathing while sleeping. |
+| body temperature | Refers to the body temperature |
+| limb movement | Measures the frequency of limb movements during sleep. |
+| blood oxygen | Represents the levels of oxygen in the blood during sleep |
+| eye movement | Indicates ocular activity during sleep |
+| sleeping hours | Represents the total number of sleep hours recorded |
+| heart rate | Indicates the heart rate during sleep |
+| stress level | Reflects the detected level of stress during the sleep period |
 
 ## Getting Started
 
@@ -139,3 +124,9 @@ Finally, you can test the model. Serving the model locally, open another termina
     ```
     python predict_test.py
     ```
+
+## Citation
+
+1. L. Rachakonda, A. K. Bapatla, S. P. Mohanty, and E. Kougianos, “SaYoPillow: Blockchain-Integrated Privacy-Assured IoMT Framework for Stress Management Considering Sleeping Habits”, IEEE Transactions on Consumer Electronics (TCE), Vol. 67, No. 1, Feb 2021, pp. 20-29.
+
+2. L. Rachakonda, S. P. Mohanty, E. Kougianos, K. Karunakaran, and M. Ganapathiraju, “Smart-Pillow: An IoT based Device for Stress Detection Considering Sleeping Habits”, in Proceedings of the 4th IEEE International Symposium on Smart Electronic Systems (iSES), 2018, pp. 161--166.

@@ -3,24 +3,27 @@ import pickle
 from flask import Flask
 from flask import request
 from flask import jsonify
+import numpy as np
+
 
 model_file = 'final_model.bin'
 
 
 with open(model_file, 'rb') as f_in:
-    model = pickle.load(f_in)
+    dv, model = pickle.load(f_in)
 
 app = Flask('stress_level')
 
-@app.route('/stress_level', methods = ['POST'])
+@app.route('/predict', methods = ['POST'])
 def predict():
 
     customer = request.get_json()
 
-    y_pred = model.predict(customer)
+    X = dv.transform([customer])
+    y_pred = model.predict(X)
 
     result = {
-        'Stress level': bool(y_pred)
+        'stress_level': int(y_pred)
     }
     return jsonify(result)
 

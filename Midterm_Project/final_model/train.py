@@ -5,6 +5,8 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 
+from sklearn.feature_extraction import DictVectorizer
+
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
@@ -29,31 +31,40 @@ most_importan_features = ['limb_movement', 'sleeping_hours', 'snoring_rate', 'ey
 
 # Training
 
-def train(df_train, y_train):
-    X_train = df_train[most_importan_features]
+def train(df_train, y_train, solver=solver, random_state=random_state):
+    dicts = df_train[most_importan_features].to_dict(orient='records')
+    
+    dv = DictVectorizer(sparse=False)
+    X_train = dv.fit_transform(dicts)
+    
     model = LogisticRegression(solver= solver, random_state=random_state)
     model.fit(X_train, y_train)
 
-    return model
+    return dv, model
 
-def predict(df, model):
-    X = df[most_importan_features]
+def predict(df, dv, model):
+    dicts = df[most_importan_features].to_dict(orient='records')
+
+    X = dv.transform(dicts)
     y_pred = model.predict(X)
+
     return y_pred
 
 # Training the final model
+print('training the final model')
 
-model = train(df_train, df_train.stress_level.values)
-y_pred = predict(df_val, model)
+dv, model = train(df_train, df_train.stress_level.values, solver, random_state)
+y_pred = predict(df_val, dv, model)
 
 y_test = df_val.stress_level.values
 acc = accuracy_score(y_test, y_pred)
+
 print('Accuracy: %.3f' % acc)
 
 # Save the model
 
 with open(output_file, 'wb') as f_out:
-    pickle.dump(model, f_out)
+    pickle.dump((dv,model), f_out)
 
 print('Model saved to %s' % output_file)
 

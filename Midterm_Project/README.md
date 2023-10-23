@@ -105,9 +105,10 @@ To serve the model with Docker:
 3. **Build the Docker image and run it:**
 
     - *Build the Docker image*
-        ```
-        docker build -t zoomcamp-midterm-project .
-        ```
+        - Open a new terminal, enter the 'Midterm_Project' folder and run the following command:
+            ```
+            docker build -t zoomcamp-midterm-project .
+            ```
         
         - REMEMBER THE DOT (.) IN THE LAST COMMAND!!!This command builds a Docker image from the provided files.
 

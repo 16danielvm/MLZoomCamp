@@ -106,10 +106,10 @@ To serve the model with Docker:
 
     - *Build the Docker image*
         ```
-        docker build -t zoomcamp-midterm-project.
+        docker build -t zoomcamp-midterm-project .
         ```
         
-        - This command builds a Docker image from the provided files.
+        - REMEMBER THE DOT (.) IN THE LAST COMMAND!!!This command builds a Docker image from the provided files.
 
     - *Run the previous image*
         ```

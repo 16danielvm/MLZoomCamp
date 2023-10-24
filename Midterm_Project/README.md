@@ -7,9 +7,9 @@ The project addresses the issue of detecting stress in humans during the sleep p
 
 ### Context 
 
-El proyecto se beneficia de los datos recopilados en el marco del proyecto de investigación [SaYoPillow](L. Rachakonda, S. P. Mohanty, E. Kougianos, K. Karunakaran, and M. Ganapathiraju, “Smart-Pillow: An IoT based Device for Stress Detection Considering Sleeping Habits”, in Proceedings of the 4th IEEE International Symposium on Smart Electronic Systems (iSES), 2018, pp. 161--166.), un dispositivo basado en IoT diseñado para la detección de estrés, teniendo en cuenta los hábitos de sueño.
+The project benefits from the data collected within the research project [SaYoPillow](https://www.researchgate.net/publication/332819364_Smart-Pillow_An_IoT_Based_Device_for_Stress_Detection_Considering_Sleeping_Habits), an IoT-based device designed for stress detection, taking into account sleeping habits.
 
-El contexto proporciona un fundamento sólido para nuestro enfoque, ya que aprovechamos los avances y la experiencia acumulada por SaYoPillow. Utilizamos los parámetros recopilados por este proyecto como punto de partida para desarrollar un modelo de predicción de estrés más amplio y aplicable.
+The context provides a solid foundation for our approach as we leverage the advancements and expertise accumulated by SaYoPillow. We use the parameters collected by this project as a starting point to develop a broader and more applicable stress prediction model.
 
 ### Significance
 

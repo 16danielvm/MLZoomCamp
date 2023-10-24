@@ -122,9 +122,9 @@ To serve the model with Docker:
 
 Finally, you can test the model. Serving the model locally, open another terminal, and:
 
-    ```
-    python predict_test.py
-    ```
+```
+python predict_test.py
+```
 
 ## Citation
 

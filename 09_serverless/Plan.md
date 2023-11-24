@@ -56,7 +56,19 @@ We'll deploy the clothes classification model we trained previously
 ## 9.4. Preparing the Lambda code
 
 * Moving the code from notebook to script
+    * lambda_function.py without lambda_handler()
 * Testing it locally
+    * cmd: python
+        * import lambda_function
+        * lambda_function.predict('http://bit.ly/mlbookcamp-pants')
+        * Ready!!
+* Agg lambda_handler()
+* Testing it locally
+    * cmd: python
+        * import lambda_function
+        * event = {'url': 'http://bit.ly/mlbookcamp-pants'}
+        * lambda_function.lambda_handler(event, None)
+        * Ready!!
 
 ## 9.5. Preparing a Docker image
 

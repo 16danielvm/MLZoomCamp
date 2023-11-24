@@ -45,6 +45,7 @@ We'll deploy the clothes classification model we trained previously
             }
 
 * Serverless vs serverfull
+* ELIMINATE!!!
 
 ## 9.3. TensorFlow Lite
 
@@ -83,9 +84,28 @@ We'll deploy the clothes classification model we trained previously
 ## 9.6. Creating the lambda function
 
 * Publishin the image to AWS ECR
+    * Crear un ECR... primero hay que crear un usuario IAM con las keys y aws configura
+    * Crear una politica para darle el permiso de crear ECR
+    * En cmd: aws ecr create-repository --repository-name clothing-tflite-images
+    * Buscar en AWS: ECR que se haya creado
+    * Ahora la idea es ingresar al ECR:
+        * En un powershell: aws ecr get-login-password --region us-east-2 | ForEach-Object { docker login -u AWS -p $_ 
+393556504128.dkr.ecr.us-east-2.amazonaws.com/clothing-tflite-images } 
+        * Ahora grabamos la imagen en el ecr creado:  
+            * docker tag clothing-model:latest 393556504128.dkr.ecr.us-east-2.amazonaws.com/clothing-tflite-images 
+            * docker push 393556504128.dkr.ecr.us-east-2.amazonaws.com/clothing-tflite-images 
 * Creating the function
+    * Ir a lambda en AWS crear una funcion
+    * Darle nombre
+    * Seleccionar la imagen ya creada!!!
 * Configuring it
 * Testing the function from the AWS Console
+    * Probar 
+    {
+        "url": "http://bit.ly/mlbookcamp-pants"
+    }
+    * Configuration -> dar 1024 de CPU y hasta 30 segundos
+    * LISTO!
 * Pricing
 
 ## 9.7. API Gateway: exposing the lambda functtion

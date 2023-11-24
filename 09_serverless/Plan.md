@@ -111,3 +111,27 @@ We'll deploy the clothes classification model we trained previously
 ## 9.7. API Gateway: exposing the lambda functtion
 
 * Creating and configuring the gateway
+
+    * Buscar API gateway en AWS
+        * Crear API
+        * REST API : Crear
+            * nombrar la API : "clothes-classification" 
+            * Click Crear recurso
+                * nombre del recurso: predict
+                * Crear
+            * Click Crear metodo:
+                * Tipo de metodo: POST
+                * Tipo de integracion: Lambda Function
+                * Lambda Region : la que se necesita donde esta todo
+                * Seleccion la funcion lambda que ya se creó
+                * Crear
+            * Testearla:
+                * Buscar pestaña "pruebas"
+                    * En el apartado de codigo: {"url": "http://bit.ly/mlbookcamp-pants"}
+            * Implementar la API:
+                * Click en "Implementar API"
+                * "New stage"
+                * Name:  test
+                * click Implementar
+        * Cambiar test.py
+            * Agregar url = 'https://x6pd0gia6i.execute-api.us-east-2.amazonaws.com/test/predict'

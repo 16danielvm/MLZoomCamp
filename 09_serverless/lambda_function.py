@@ -1,6 +1,6 @@
 
 import tensorflow.lite as tflite # se supone que se comenta este
-# import tflite_runtime.interpreter as tflite
+# import tflite_runtime.interpreter as tflite # PARA EL DOCKERFILE DESCOMENTAR ESTE!! Y COMENTAR EL DE ARRIBA
 from keras_image_helper import create_preprocessor
 
 interpreter = tflite.Interpreter(model_path='clothing-model.tflite')
@@ -31,8 +31,10 @@ def predict(url):
     interpreter.set_tensor(input_index, X)
     interpreter.invoke()
     preds = interpreter.get_tensor(output_index)
+
+    float_predictions = preds[0].tolist()
     
-    return dict(zip(classes, preds[0]))
+    return dict(zip(classes, float_predictions))
 
 def lambda_handler(event, context):
     url = event['url']

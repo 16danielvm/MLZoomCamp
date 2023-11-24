@@ -74,6 +74,10 @@ We'll deploy the clothes classification model we trained previously
 
 * Lambda base images
 * Preparing the docker file
+    * create docker file
+    * build the image: docker build -t clothing-model .
+    * test: docker run -it --rm -p 8080:8080 clothing-model:latest
+* Create test.py
 * Using the right TF-Lite wheel
 
 ## 9.6. Creating the lambda function

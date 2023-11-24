@@ -9,6 +9,41 @@ We'll deploy the clothes classification model we trained previously
 ## 9.2. AWS Lambda
 
 * Intro to AWS Lambda
+    * Search Lambda
+    * Crear desde cero / Author from scratch
+    * Nombre de la funcion / Function name
+    * Seleccionar the environment / Runtime -> Python 3.10
+    * Arquitectura / Architecture -> x86_64
+    * Crear la funcion / Create de function
+
+* Look the code of lambda function 
+    import json
+
+    def lambda_handler(event, context):
+        print("parameters:", event)
+        # TODO implement
+        return "PONG"
+
+    * Click Test
+    * Configure test event
+        * Event name -> test
+        * Create or Save
+    
+    * Click test again
+    * Now change the code of lambda function
+        import json
+
+        def lambda_handler(event, context):
+            print("parameters:", event)
+            url = event['url]
+            results = predict(url)
+            return results
+    * Click deploy and then test
+    * Configure the event:
+            {
+                "url": "some-url-of-pant"
+            }
+            
 * Serverless vs serverfull
 
 ## 9.3. TensorFlow Lite

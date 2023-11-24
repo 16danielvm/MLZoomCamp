@@ -87,15 +87,17 @@ We'll deploy the clothes classification model we trained previously
     * Crear un ECR... primero hay que crear un usuario IAM con las keys y aws configura
     * Crear una politica para darle el permiso de crear ECR
     * En cmd: aws ecr create-repository --repository-name clothing-tflite-images
+    * GUARDAR EL "repositoryUri"
     * Buscar en AWS: ECR que se haya creado
     * Ahora la idea es ingresar al ECR:
-        * En un powershell: aws ecr get-login-password --region us-east-2 | ForEach-Object { docker login -u AWS -p $_ 
-393556504128.dkr.ecr.us-east-2.amazonaws.com/clothing-tflite-images } 
+        * En un powershell: 
+            * Creamos la contraseña: aws ecr get-login-password --region us-east-2 | ForEach-Object {$_ -replace '[0-9a-zA-Z=]{20,}', 'PASSWORD'} 
+            * Ingresamos: aws ecr get-login-password --region us-east-2 | ForEach-Object { docker login -u AWS -p $_ 393556504128.dkr.ecr.us-east-2.amazonaws.com/clothing-tflite-images } 
         * Ahora grabamos la imagen en el ecr creado:  
             * docker tag clothing-model:latest 393556504128.dkr.ecr.us-east-2.amazonaws.com/clothing-tflite-images 
             * docker push 393556504128.dkr.ecr.us-east-2.amazonaws.com/clothing-tflite-images 
 * Creating the function
-    * Ir a lambda en AWS crear una funcion
+    * Ir a lambda en AWS crear una funcion CON "IMAGEN DEL CONTENDOR"
     * Darle nombre
     * Seleccionar la imagen ya creada!!!
 * Configuring it

@@ -43,12 +43,13 @@ We'll deploy the clothes classification model we trained previously
             {
                 "url": "some-url-of-pant"
             }
-            
+
 * Serverless vs serverfull
 
 ## 9.3. TensorFlow Lite
 
 * Why not TensorFlow
+    * TF is so large library / Instead use a light library (TF-Lite)
 * Converting de model
 * Using the TF-Lite model for making predictions
 

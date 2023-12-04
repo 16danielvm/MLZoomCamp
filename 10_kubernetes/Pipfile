@@ -4,16 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
 grpcio = "==1.42.0"
 flask = "*"
-gunicorn = "*"
+waitress = "*"
 keras-image-helper = "*"
 tensorflow-protobuf = "==2.7.0"
-protobuf = "==3.19.6"
+protobuf = "==3.20.1"
 
 [dev-packages]
-
-[requires]
-python_version = "3.9"
-python_full_version = "3.9.13"

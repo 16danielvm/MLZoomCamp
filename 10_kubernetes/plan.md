@@ -58,16 +58,20 @@ Wee'll deploy de clothers classification model we trained previously using Kuber
     * Tercer cmd: Correr test.py
 
 * Putting everythinh into a Pipenv
-    * Crar un Pipenv:
+    * Crar un Pipenv # SI ES CON python 3.10:
         * pipenv install grpcio==1.42.0 flask waitress keras-image-helper
         * pipenv install tensorflow-protobuf==2.7.0
-        * #SOLO FUNCIONA CON PYTHON 3.9
+        * pipenv install protobuf==3.20.1
+        
+        * # SI ES CON PYTHON 3.9
             * pipenv install --python 3.9.13 requests grpcio==1.42.0 flask gunicorn keras-image-helper tensorflow-protobuf==2.7.0 protobuf==3.19.6
 
     * Crear proto.py y copiamos el codigo de : https://github.com/alexeygrigorev/tensorflow-protobuf
-    * Ejecutar el pipenv en cmd <ES NECESARIO USAR PYTHON 3.9.13>:
+    * Modificar gateway.py
+    * Ejecutar el pipenv en cmd CON EL PYTHON QUE SE USO:
         * pipenv shell
         * python gateway.py
+    * Modificar gateway.py (descomentar/comentar solo lo ultimo)
 
 
 ## 10.4 Running everything locally with Docker-compose

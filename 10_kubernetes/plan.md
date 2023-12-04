@@ -46,7 +46,29 @@ Wee'll deploy de clothers classification model we trained previously using Kuber
 ## 10.3 Creating a pre-processing service
 
 * Converting the notebook to a Python Script
+    * crear gateway-sinflask.py
+
 * Wrapping the script into a Flask app
+    * crear gateway.py
+    * crear test.py
+
+* Para probarlo es necesario 3 terminales:
+    * Primer cmd: ejecutas la linea de comando de docker (Correr tensorflow serving)
+    * Segundo cmd: Correr gateway.py
+    * Tercer cmd: Correr test.py
+
+* Putting everythinh into a Pipenv
+    * Crar un Pipenv:
+        * pipenv install grpcio==1.42.0 flask waitress keras-image-helper
+        * pipenv install tensorflow-protobuf==2.7.0
+        * #SOLO FUNCIONA CON PYTHON 3.9
+            * pipenv install --python 3.9.13 requests grpcio==1.42.0 flask gunicorn keras-image-helper tensorflow-protobuf==2.7.0 protobuf==3.19.6
+
+    * Crear proto.py y copiamos el codigo de : https://github.com/alexeygrigorev/tensorflow-protobuf
+    * Ejecutar el pipenv en cmd <ES NECESARIO USAR PYTHON 3.9.13>:
+        * pipenv shell
+        * python gateway.py
+
 
 ## 10.4 Running everything locally with Docker-compose
 

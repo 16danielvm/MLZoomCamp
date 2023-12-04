@@ -1,4 +1,5 @@
 # Importaciones de bibliotecas necesarias
+import os #### Agregar esta linea despues de crear el docker-compose.yaml
 import grpc
 import tensorflow as tf
 from tensorflow_serving.apis import predict_pb2
@@ -11,8 +12,10 @@ from flask import jsonify
 
 from proto import np_to_protobuf #LINEA AGREGADA DESPUES DE CREAR EL ARCHIVO proto.py
 
+host = os.getenv('TF_SERVING_HOST', 'localhost:8500') ####LINEA AGREGADA DESPUES DE CREAR EL ARCHIVO docker-compose.yaml
+
 # Dirección del servidor TensorFlow Serving
-host = 'localhost:8500'
+# host = 'localhost:8500' ####LINEA COMENTADA DESPUES DE CREAR EL ARCHIVO docker-compose.yaml
 
 # Configuración del canal gRPC y creación del stub
 channel = grpc.insecure_channel(host)
@@ -58,7 +61,7 @@ def predict(url):
     response = prepare_response(pb_response)
     return response
 
-app = Flask('gataway')
+app = Flask('gateway')
 
 @app.route('/predict', methods=['POST'])
 def predict_endpoint():

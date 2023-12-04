@@ -77,9 +77,30 @@ Wee'll deploy de clothers classification model we trained previously using Kuber
 ## 10.4 Running everything locally with Docker-compose
 
 * Preparing th images
-* Instralling docker-compose
+    * Crear image-model.dockerfile
+    * en cmd: 
+        * docker build -t zoomcamp-10-model:xception-v4-001 -f image-model.dockerfile .
+        * docker run -it --rm -p 8500:8500 zoomcamp-10-model:xception-v4-001
+    * Crear image-gateway.dockerfile
+    * en cmd: 
+        * docker build -t zoomcamp-10-gateway:001 -f image-gateway.dockerfile .
+        * docker run -it --rm -p 9696:9696 zoomcamp-10-gateway:001
+* Installing docker-compose
+    * crear docker-compose.yaml
+    * modificar gateway.py
+    * En cmd:
+        * docker build -t zoomcamp-10-gateway:002 -f image-gateway.dockerfile .
+    
 * Running the service
+    * En cmd:
+        * docker-compose up
 * Testing the service
+    * En cmd:
+        * python test.py
+
+* EXTRA:
+    * docker-compose -d = hace que en segundo plano se ejecute el dockercompose y seguir en el mismo terminal
+    * docker-compose down = acaba con todo
 
 ## 10.5 Introduction to Kubernetes
 

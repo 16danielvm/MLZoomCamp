@@ -75,10 +75,10 @@ def predict_endpoint():
 # Bloque principal
 if __name__ == '__main__':
     #### 3 lineas descomentadas despues de crear el archivo proto.py solo para el pipenv
-    # # Ejemplo de URL de imagen a predecir
-    # url = 'http://bit.ly/mlbookcamp-pants'
+    # Ejemplo de URL de imagen a predecir
+    url = 'http://bit.ly/mlbookcamp-pants'
     
-    # # Realización de la predicción y muestra del resultado
-    # response = predict(url)
-    # print(response)
-    app.run(debug=True, host='0.0.0.0', port=9696) ####LINEA COMENTADA DESPUES DE CREAR EL ARCHIVO proto.py solo para el pipenv
+    # Realización de la predicción y muestra del resultado
+    response = predict(url)
+    print(response)
+    # app.run(debug=True, host='0.0.0.0', port=9696) ####LINEA COMENTADA DESPUES DE CREAR EL ARCHIVO proto.py solo para el pipenv

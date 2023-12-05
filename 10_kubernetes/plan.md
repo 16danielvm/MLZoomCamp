@@ -109,13 +109,66 @@ Wee'll deploy de clothers classification model we trained previously using Kuber
 ## 10.6 Depoying a simple service to Kubernetes
 
 * Installing kubectl
+    * kubectl ya viene instalado por docker desktop
 * Setting up a local Kubernetes cluster with kind
+    * En cmd: wget "https://kind.sigs.k8s.io/dl/v0.20.0/kind-windows-amd64" -O kind-windows-amd64.exe
+    * en cmd: Move-Item kind-windows-amd64.exe C:/kind/kind.exe
+    * Para este caso y poder ejecutar kind... C:/kind/kind.exe create cluster
+    * kubectl cluster-info --context kind-kind
 * Creating a deployment
+    * crear deployment.yaml
+    * en cmd: kubectl apply -f deployment.yaml
+    * en cmd: kubectl get deployment
+    * en cmd: kubectl get pod 
+    * en cmd: kubectl describe pod <NOMBRE DEL POD>
+    * en cmd: kind load docker-image ping:v001
+    * en cmd: kubectl get pod 
+    * en cmd: kubectl port-forward <nombre del pod> 9696:9696
 * Creating a service
+    * crear service.yaml
+    * en cmd: kubectl apply -f service.yaml
+    * en cmd: kubectl get service
+    * en cmd: kubectl get svc
+    * Se modificó service agregando type: LoadBalancer
+    * en cmd: kubectl apply -f service.yaml
+    * en cmd: kubectl get svc
+    * en cmd: kubectl port-forward service/ping 8080:80
 
+* PARA BORRAR
+    * EN CMD: kubectl delete -f deployment.yaml
 ## 10.7 Deploying TensowFlow models to kubernetes
 
 * Deploying the TF-Serving model
+    * crear model-deployment.yaml
+    * en cmd: kubectl apply -f deployment.yaml
+    * en cmd: kubectl get pod
+    * en cmd: kubectl describe pod <NOMBRE DEL POD>
+    * en cmd: kubectl port-forward <NOMBRE DEL POD> 8500:8500
+    * PARA PROBAR:
+        * En otro cmd: python gateway.py despues de comentar la ultima linea y descomentar las 3 anteriores
+    
+    * crear model-service.yaml
+    * en cmd: kubectl apply -f model-service.yaml
+    * en cmd: kubectl get service
+    * en cmd: kubectl port-forward service/<nombre del servicio> 8500:8500
+    * PARA PROBAR:
+        * En otro cmd: python gateway.py despues de comentar la ultima linea y descomentar las 3 anteriores
+
+    * crear gateway-deployment.yaml
+    * en cmd: C:/kind/kind.exe load docker-image zoomcamp-10-gateway:002
+    * Seguir modificando gateway-deployment.yaml:
+        * se agrega: 
+                    env:
+                    - name: TF-SERVING-HOSt
+                    value: tf-serving-clothing-model.default.svc.cluster.local:8500
+    * en cmd: kubectl apply -f gateway-deployment.yaml
+    * en cmd: kubectl get pod
+    * en cmd: kubectl port-forward <NOMBRE DEL POD> 9696:9696
+
+    * crear gateway-service.yaml
+    * en cmd: kubectl apply -f gateway-service.yaml
+    * en cmd: kubectl get service
+    * en cmd: kubectl port-forward service/<nombre del servicio> 8500:8500
 * Deploying the Gateway
 * Testing the service
 

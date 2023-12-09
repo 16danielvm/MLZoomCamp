@@ -8400,3 +8400,7 @@
 .venv/share/jupyter/kernels/python3/logo-svg.svg
 10_kubernetes/python-3.9.13-amd64.exe
 Capstone_Project_1/data/sample_submission.csv
+Capstone_Project_1/Testing test data/submission_lrall.csv
+Capstone_Project_1/Testing test data/submission_lrless.csv
+Capstone_Project_1/Testing test data/TestingTestdata.ipynb
+Capstone_Project_1/Testing test data/submission_xgb.csv

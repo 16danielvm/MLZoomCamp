@@ -75,19 +75,17 @@ python train.py
 For the purpose of testing the model locally, two files were created (predict_test.py, predict.py), which serve to load and execute the model, and similarly, submit new input for prediction.
 
 To testing the model:
-
     1. Open a new terminal and run the predict.py file:
+        
         ```
         python predict.py
 
         ```
-
     2. At the same time, open another new terminal and run the predict_test.py file:
         
         ```
         python predict_test.py
         ```
-    
     3. Now, you can see the response for the new data. It must be:
         
         ```

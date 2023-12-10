@@ -75,20 +75,21 @@ python train.py
 For the purpose of testing the model locally, two files were created (predict_test.py, predict.py), which serve to load and execute the model, and similarly, submit new input for prediction.
 
 To testing the model:
+    
     1. Open a new terminal and run the predict.py file:
         
-        ```
+        ```bash
         python predict.py
 
         ```
     2. At the same time, open another new terminal and run the predict_test.py file:
         
-        ```
+        ```bash
         python predict_test.py
         ```
     3. Now, you can see the response for the new data. It must be:
         
-        ```
+        ```bash
         {'status': 0}
         Your Cirrhosis status is C.
         ```
@@ -97,15 +98,15 @@ Similarly, an attempt was made to implement serverless to deploy this model. To 
 
     1. Open a new terminal and do the following:
         
-        ```
+        ```bash
         python
         ```
 
-        ```
+        ```bash
         import lambda_function
         ```
 
-        ```
+        ```bash
         lambda_function.predict({
                                     "Bilirubin": -0.707522,
                                     "Copper": 0.799566,
@@ -126,15 +127,15 @@ Similarly, an attempt was made to implement serverless to deploy this model. To 
 
     2. Another way is using the lambda_handler() function, as follows: Open a new terminal
         
-        ```
+        ```bash
         python
         ```
 
-        ```
+        ```bash
         import lambda_function
         ```
 
-        ```
+        ```bash
         event =   {'customer' : {
                                     "Bilirubin": -0.707522,
                                     "Copper": 0.799566,
@@ -152,7 +153,7 @@ Similarly, an attempt was made to implement serverless to deploy this model. To 
                     }
         ```
 
-        ```
+        ```bash
         lambda_function.lambda_handler(event,None)
         ```
 

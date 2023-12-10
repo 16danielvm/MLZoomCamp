@@ -41,6 +41,14 @@ Take a thorough look at the characteristics presented in the dataset, including 
 | Stage          | The stage of the disease or medical condition of the patient.                                                 |
 | Status         | The status of the patient, with values 'C' (Compensated), 'D' (Decompensated), or 'CL' (Controlled).          |                     |
 
+## Exploratory Data Analysis 
+
+In the project development, I chose to use the ydata-profiling library for exploratory data analysis (EDA). This tool provide a detailed and understandable view of the structure and characteristics of the involved datasets.
+
+ydata-profiling stands out for its ability to generate comprehensive reports covering various aspects of the data. From value distribution to key statistics, the library offers a complete overview that facilitates the identification of patterns, anomalies, and trends in the data. Moreover, its capability to highlight null values, provide clear visualizations, and summarize descriptive statistics significantly contributes to streamlining the analysis process.
+
+In eda folder, you can find the notebook_eda file where I showed how implement the ydata-profiling, the insights that i found with it, the data preparation, implementing of feature selection, deployment of several algorithms, and the selection of final model. Also, you can see the eda_report exported in html file for a better view of the report and the standarizing features file.
+
 ## Getting Started
 
 This is a set of instructions on setting up this project locally. To get a local copy up and running follow these simple example steps.
@@ -76,88 +84,110 @@ For the purpose of testing the model locally, two files were created (predict_te
 
 To testing the model:
     
-    1. Open a new terminal and run the predict.py file:
+1. Open a new terminal and run the predict.py file:
         
-        ```bash
-        python predict.py
+```
+python predict.py
 
-        ```
-    2. At the same time, open another new terminal and run the predict_test.py file:
+```
+2. At the same time, open another new terminal and run the predict_test.py file:
         
-        ```bash
-        python predict_test.py
-        ```
-    3. Now, you can see the response for the new data. It must be:
-        
-        ```bash
-        {'status': 0}
-        Your Cirrhosis status is C.
-        ```
+```
+python predict_test.py
+```
+
+3. Now, you can see the response for the new data. It must be: {'status': 0} Your Cirrhosis status is C.
+
 
 Similarly, an attempt was made to implement serverless to deploy this model. To do this, the lambda_function.py file was created, which can be tested locally as follows.
 
-    1. Open a new terminal and do the following:
+1. Open a new terminal and do the following:
         
-        ```bash
-        python
-        ```
+```
+python
+```
 
-        ```bash
-        import lambda_function
-        ```
+```
+import lambda_function
+```
 
-        ```bash
-        lambda_function.predict({
-                                    "Bilirubin": -0.707522,
-                                    "Copper": 0.799566,
-                                    "N_Days": -0.261788,
-                                    "Stage": 2,
-                                    "Hepatomegaly": 0,
-                                    "Prothrombin": -1.224804,
-                                    "SGOT": -0.913350,
-                                    "Edema": 0,
-                                    "Platelets": 0.568196,
-                                    "Age": 1.336986,
-                                    "Cholesterol": -1.178809,
-                                    "Drug": 1
-                                })
-        ```
+```
+lambda_function.predict({
+                            "Bilirubin": -0.707522,
+                            "Copper": 0.799566,
+                            "N_Days": -0.261788,
+                            "Stage": 2,
+                            "Hepatomegaly": 0,
+                            "Prothrombin": -1.224804,
+                            "SGOT": -0.913350,
+                            "Edema": 0,
+                            "Platelets": 0.568196,
+                            "Age": 1.336986,
+                            "Cholesterol": -1.178809,
+                            "Drug": 1
+                        })
+```
         
-    - Ready!, You should get the same response as before.
+- Ready!, You should get the same response as before.
 
-    2. Another way is using the lambda_handler() function, as follows: Open a new terminal
+2. Another way is using the lambda_handler() function, as follows: Open a new terminal
         
-        ```bash
-        python
-        ```
+```
+python
+```
 
-        ```bash
-        import lambda_function
-        ```
+```
+import lambda_function
+```
 
-        ```bash
-        event =   {'customer' : {
-                                    "Bilirubin": -0.707522,
-                                    "Copper": 0.799566,
-                                    "N_Days": -0.261788,
-                                    "Stage": 2,
-                                    "Hepatomegaly": 0,
-                                    "Prothrombin": -1.224804,
-                                    "SGOT": -0.913350,
-                                    "Edema": 0,
-                                    "Platelets": 0.568196,
-                                    "Age": 1.336986,
-                                    "Cholesterol": -1.178809,
-                                    "Drug": 1
-                                }
-                    }
-        ```
+```
+event =   {'customer' : {
+                            "Bilirubin": -0.707522,
+                            "Copper": 0.799566,
+                            "N_Days": -0.261788,
+                            "Stage": 2,
+                            "Hepatomegaly": 0,
+                            "Prothrombin": -1.224804,
+                            "SGOT": -0.913350,
+                            "Edema": 0,
+                            "Platelets": 0.568196,
+                            "Age": 1.336986,
+                            "Cholesterol": -1.178809,
+                            "Drug": 1
+                        }
+            }
+```
 
-        ```bash
-        lambda_function.lambda_handler(event,None)
-        ```
+```
+lambda_function.lambda_handler(event,None)
+```
 
-    - Ready! Again, You should get the same response as before.
+- Ready! Again, You should get the same response as before.
+
+Also, you can use the model with docker:
+
+1. **First install docker**
+2. **Click and initialize the DOCKER Desltop app after intalling it**
+3. **Build the docker image:**
+   - *Build the docker image*
+     - Open a new terminal, enter the 'Capstone_Project_1' folder and run the following command:
+            ```
+            docker build -t capstone-project .
+            ```
+        
+        - REMEMBER THE DOT (.) IN THE LAST COMMAND!!!This command builds a Docker image from the provided files.
+
+    - *Run the previous image*
+        ```
+        docker run -it --rm -p 8080:8080 capstone-project:latest
+        ```
+### Testing the model
+
+Finally, you can test the model. At the same time, open another terminal, and:
+
+```
+python test.py
+```
 
 ## Citation 
 

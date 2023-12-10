@@ -41,6 +41,110 @@ Take a thorough look at the characteristics presented in the dataset, including 
 | Stage          | The stage of the disease or medical condition of the patient.                                                 |
 | Status         | The status of the patient, with values 'C' (Compensated), 'D' (Decompensated), or 'CL' (Controlled).          |                     |
 
+## Getting Started
+
+This is a set of instructions on setting up this project locally. To get a local copy up and running follow these simple example steps.
+
+Prerequisites This is an example of how to list things you need to use this software.
+
+- Python
+- Pipenv
+- Docker 
+
+### Installing Dependencies
+
+You have to install the dependencies with pipenv (because the version of model XgBoost that i used on this project has to be the same), as they are specified in the `Pipfile` and `Pipfile.lock`, by running the following commands:
+
+```
+pipenv install
+pipenv shell
+```
+
+### Building the model
+
+You have the option to execute either the `train.py` file (This file is in final_model folder)  to carry out all the necessary steps for training the final model used in this project.
+
+To initiate the model training, you can use the following command:
+
+```
+python train.py
+```
+
+### Serving the model (Locally)
+
+For the purpose of testing the model locally, two files were created (predict_test.py, predict.py), which serve to load and execute the model, and similarly, submit new input for prediction.
+
+To testing the model:
+
+    1. Open a new terminal and run the predict.py file:
+        
+        ```
+        python predict.py
+        
+        ```
+    2. At the same time, open another new terminal and run the predict_test.py file:
+        
+        ```
+        python predict_test.py
+        ```
+    
+    3. Now, you can see the response for the new data. It must be:
+        
+        ```
+        {'status': 0}
+        Your Cirrhosis status is C.
+        ```
+
+Similarly, an attempt was made to implement serverless to deploy this model. To do this, the lambda_function.py file was created, which can be tested locally as follows.
+
+    1. Open a new terminal and do the following:
+        
+        ```
+        - python
+        - import lambda_function
+        - lmabda_function.predict({
+                                        "Bilirubin": -0.707522,
+                                        "Copper": 0.799566,
+                                        "N_Days": -0.261788,
+                                        "Stage": 2,
+                                        "Hepatomegaly": 0,
+                                        "Prothrombin": -1.224804,
+                                        "SGOT": -0.913350,
+                                        "Edema": 0,
+                                        "Platelets": 0.568196,
+                                        "Age": 1.336986,
+                                        "Cholesterol": -1.178809,
+                                        "Drug": 1
+                                    })
+        ```
+        
+        - Ready!, You should get the same response as before.
+
+    2. Another way is using the lambda_handler() function, as follows: Open a new terminal
+        
+        ```
+        - python
+        - import lambda_function
+        - event =   {'customer' : {
+                                    "Bilirubin": -0.707522,
+                                    "Copper": 0.799566,
+                                    "N_Days": -0.261788,
+                                    "Stage": 2,
+                                    "Hepatomegaly": 0,
+                                    "Prothrombin": -1.224804,
+                                    "SGOT": -0.913350,
+                                    "Edema": 0,
+                                    "Platelets": 0.568196,
+                                    "Age": 1.336986,
+                                    "Cholesterol": -1.178809,
+                                    "Drug": 1
+                                }
+                    }
+        - lambda_function.lambda_handler(event,None)
+        ```
+
+        - Ready! Again, You should get the same response as before.
+
 ## Citation 
 
 1. Walter Reade, Ashley Chow. (2023). Multi-Class Prediction of Cirrhosis Outcomes. Kaggle. https://kaggle.com/competitions/playground-series-s3e26

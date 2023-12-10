@@ -96,6 +96,9 @@ print('AUC: %.3f' % auc)
 
 # Save the model
 
+# model.save_model('modelo_guardado.json')
+print('Model saved to modelo_guardado.json')
+
 with open(output_file, 'wb') as f_out:
     pickle.dump((dv,model), f_out)
 

@@ -77,74 +77,88 @@ For the purpose of testing the model locally, two files were created (predict_te
 To testing the model:
 
     1. Open a new terminal and run the predict.py file:
-        
-```
-python predict.py
+        ```
+        python predict.py
 
-```
+        ```
 
     2. At the same time, open another new terminal and run the predict_test.py file:
         
-```
-python predict_test.py
-```
+        ```
+        python predict_test.py
+        ```
     
     3. Now, you can see the response for the new data. It must be:
         
-```
-{'status': 0}
-Your Cirrhosis status is C.
-```
+        ```
+        {'status': 0}
+        Your Cirrhosis status is C.
+        ```
 
 Similarly, an attempt was made to implement serverless to deploy this model. To do this, the lambda_function.py file was created, which can be tested locally as follows.
 
     1. Open a new terminal and do the following:
         
-```
-- python
-- import lambda_function
-- lmabda_function.predict({
-                                "Bilirubin": -0.707522,
-                                "Copper": 0.799566,
-                                "N_Days": -0.261788,
-                                "Stage": 2,
-                                "Hepatomegaly": 0,
-                                "Prothrombin": -1.224804,
-                                "SGOT": -0.913350,
-                                "Edema": 0,
-                                "Platelets": 0.568196,
-                                "Age": 1.336986,
-                                "Cholesterol": -1.178809,
-                                "Drug": 1
-                            })
-```
+        ```
+        python
+        ```
+
+        ```
+        import lambda_function
+        ```
+
+        ```
+        lambda_function.predict({
+                                    "Bilirubin": -0.707522,
+                                    "Copper": 0.799566,
+                                    "N_Days": -0.261788,
+                                    "Stage": 2,
+                                    "Hepatomegaly": 0,
+                                    "Prothrombin": -1.224804,
+                                    "SGOT": -0.913350,
+                                    "Edema": 0,
+                                    "Platelets": 0.568196,
+                                    "Age": 1.336986,
+                                    "Cholesterol": -1.178809,
+                                    "Drug": 1
+                                })
+        ```
         
-        - Ready!, You should get the same response as before.
+    - Ready!, You should get the same response as before.
 
     2. Another way is using the lambda_handler() function, as follows: Open a new terminal
         
-```
-- python
-- import lambda_function
-- event =   {'customer' : {
-                            "Bilirubin": -0.707522,
-                            "Copper": 0.799566,
-                            "N_Days": -0.261788,
-                            "Stage": 2,
-                            "Hepatomegaly": 0,
-                            "Prothrombin": -1.224804,
-                            "SGOT": -0.913350,
-                            "Edema": 0,
-                            "Platelets": 0.568196,
-                            "Age": 1.336986,
-                            "Cholesterol": -1.178809,
-                            "Drug": 1
-                        }
-            }
-- lambda_function.lambda_handler(event,None)
-```
+        ```
+        python
+        ```
 
-        - Ready! Again, You should get the same response as before.
+        ```
+        import lambda_function
+        ```
+
+        ```
+        event =   {'customer' : {
+                                    "Bilirubin": -0.707522,
+                                    "Copper": 0.799566,
+                                    "N_Days": -0.261788,
+                                    "Stage": 2,
+                                    "Hepatomegaly": 0,
+                                    "Prothrombin": -1.224804,
+                                    "SGOT": -0.913350,
+                                    "Edema": 0,
+                                    "Platelets": 0.568196,
+                                    "Age": 1.336986,
+                                    "Cholesterol": -1.178809,
+                                    "Drug": 1
+                                }
+                    }
+        ```
+
+        ```
+        lambda_function.lambda_handler(event,None)
+        ```
+
+    - Ready! Again, You should get the same response as before.
 
 ## Citation 
 

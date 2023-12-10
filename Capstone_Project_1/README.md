@@ -78,7 +78,7 @@ To initiate the model training, you can use the following command:
 python train.py
 ```
 
-### Serving the model (Locally)
+## Serving the model (Locally)
 
 For the purpose of testing the model locally, two files were created (predict_test.py, predict.py), which serve to load and execute the model, and similarly, submit new input for prediction.
 
@@ -171,16 +171,18 @@ Also, you can use the model with docker:
 3. **Build the docker image:**
    - *Build the docker image*
      - Open a new terminal, enter the 'Capstone_Project_1' folder and run the following command:
-            ```
-            docker build -t capstone-project .
-            ```
+
+       ```
+       docker build -t capstone-project .
+       ```
         
         - REMEMBER THE DOT (.) IN THE LAST COMMAND!!!This command builds a Docker image from the provided files.
 
     - *Run the previous image*
-        ```
-        docker run -it --rm -p 8080:8080 capstone-project:latest
-        ```
+
+      ```
+      docker run -it --rm -p 8080:8080 capstone-project:latest
+      ```
 ### Testing the model
 
 Finally, you can test the model. At the same time, open another terminal, and:
@@ -188,6 +190,53 @@ Finally, you can test the model. At the same time, open another terminal, and:
 ```
 python test.py
 ```
+## Serverless model (You don't have to do these steps. It is just to show what i do to implement serverless, check the last section)
+
+For the serverless implementation after creating the Docker image, follow these steps:
+
+1. Lambda Function Creation:
+
+   1.1. Publish Docker Image to AWS ECR:
+
+   - Create an AWS ECR (Elastic Container Registry) to store the image.
+   - Set up an IAM user with keys for authentication.
+   - Create a policy to grant permissions for ECR creation. (If you want to know which permission policy you need, check out this [tweet](https://twitter.com/16danielvm/status/1728486982861693336/photo/1) that I posted)
+   - Publish the image to ECR using AWS CLI.
+
+   1.2. Create Lambda Function:
+
+   - Through AWS Lambda, create a new function using the previously created Docker container image.
+
+3. API Gateway: Testing the Lambda Function:
+
+   2.1. Create and Configure API Gateway:
+   - Using API Gateway in AWS, create a new REST API and give it a name.
+   - Create a resource named "predict" and a POST method to integrate with the Lambda function.
+   - Perform console tests by providing input data. For example:
+
+     {"customer" : {
+                "Bilirubin": -0.707522,
+                "Copper": 0.799566,
+                "N_Days": -0.261788,
+                "Stage": 2,
+                "Hepatomegaly": 0,
+                "Prothrombin": -1.224804,
+                "SGOT": -0.913350,
+                "Edema": 0,
+                "Platelets": 0.568196,
+                "Age": 1.336986,
+                "Cholesterol": -1.178809,
+                "Drug": 1
+            }}
+   - Implement the API and create a new stage for testing.
+
+### Testing the model serverless (If you want test the Serverless, do this)
+
+Open a new terminal and execute the testServerless.py file:
+```
+python testServerless.py
+```
+Finally, you will have the classification of the patient's Cirrhosis level.
 
 ## Citation 
 

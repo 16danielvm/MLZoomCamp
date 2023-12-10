@@ -41,13 +41,13 @@ Take a thorough look at the characteristics presented in the dataset, including 
 | Stage          | The stage of the disease or medical condition of the patient.                                                 |
 | Status         | The status of the patient, with values 'C' (Compensated), 'D' (Decompensated), or 'CL' (Controlled).          |                     |
 
-## Exploratory Data Analysis 
+## Exploratory Data Analysis (EDA)
 
-In the project development, I chose to use the ydata-profiling library for exploratory data analysis (EDA). This tool provide a detailed and understandable view of the structure and characteristics of the involved datasets.
+In the project development, I chose to use the `ydata-profiling` library for exploratory data analysis (EDA). This tool provide a detailed and understandable view of the structure and characteristics of the involved datasets.
 
-ydata-profiling stands out for its ability to generate comprehensive reports covering various aspects of the data. From value distribution to key statistics, the library offers a complete overview that facilitates the identification of patterns, anomalies, and trends in the data. Moreover, its capability to highlight null values, provide clear visualizations, and summarize descriptive statistics significantly contributes to streamlining the analysis process.
+`ydata-profiling` stands out for its ability to generate comprehensive reports covering various aspects of the data. From value distribution to key statistics, the library offers a complete overview that facilitates the identification of patterns, anomalies, and trends in the data. Moreover, its capability to highlight null values, provide clear visualizations, and summarize descriptive statistics significantly contributes to streamlining the analysis process.
 
-In eda folder, you can find the notebook_eda file where I showed how implement the ydata-profiling, the insights that i found with it, the data preparation, implementing of feature selection, deployment of several algorithms, and the selection of final model. Also, you can see the eda_report exported in html file for a better view of the report and the standarizing features file.
+In eda folder, you can find the notebook_eda file where I showed how implement the `ydata-profiling`, the **insights** that i found with it, the **data preparation**, implementing of **feature selection**, **deployment of several algorithms**, and the **selection of final model*. Also, you can see the eda_report exported in html file for a better view of the report and the **standarizing features** file.
 
 ## Getting Started
 
@@ -61,7 +61,7 @@ Prerequisites This is an example of how to list things you need to use this soft
 
 ### Installing Dependencies
 
-You have to install the dependencies with pipenv (because the version of model XgBoost that i used on this project has to be the same), as they are specified in the `Pipfile` and `Pipfile.lock`, by running the following commands:
+You have to install the **dependencies** with pipenv (because the version of model XgBoost that i used on this project has to be the same), as they are specified in the `Pipfile` and `Pipfile.lock`, by running the following commands:
 
 ```
 pipenv install
@@ -70,7 +70,7 @@ pipenv shell
 
 ### Building the model
 
-You have the option to execute either the `train.py` file (This file is in final_model folder)  to carry out all the necessary steps for training the final model used in this project.
+You have the option to execute either the `train.py` file (This file is in **final_model** folder)  to carry out all the necessary steps for training the final model used in this project.
 
 To initiate the model training, you can use the following command:
 
@@ -80,26 +80,26 @@ python train.py
 
 ## Serving the model (Locally)
 
-For the purpose of testing the model locally, two files were created (predict_test.py, predict.py), which serve to load and execute the model, and similarly, submit new input for prediction.
+For the purpose of testing the model locally, two files were created (`predict_test.py`, `predict.py`), which serve to load and execute the model, and similarly, submit new input for prediction.
 
 To testing the model:
     
-1. Open a new terminal and run the predict.py file:
+1. Open a new terminal and run the `predict.py` file:
         
 ```
 python predict.py
 
 ```
-2. At the same time, open another new terminal and run the predict_test.py file:
+2. At the same time, open another new terminal and run the `predict_test.py` file:
         
 ```
 python predict_test.py
 ```
 
-3. Now, you can see the response for the new data. It must be: {'status': 0} Your Cirrhosis status is C.
+3. Now, you can see the response for the new data. It must be: `{'status': 0} Your Cirrhosis status is C`.
 
 
-Similarly, an attempt was made to implement serverless to deploy this model. To do this, the lambda_function.py file was created, which can be tested locally as follows.
+Similarly, an attempt was made to implement serverless to deploy this model. To do this, the `lambda_function.py` file was created, which can be tested locally as follows.
 
 1. Open a new terminal and do the following:
         
@@ -130,7 +130,7 @@ lambda_function.predict({
         
 - Ready!, You should get the same response as before.
 
-2. Another way is using the lambda_handler() function, as follows: Open a new terminal
+2. Another way is using the `lambda_handler()` function, as follows: Open a new terminal
         
 ```
 python
@@ -190,7 +190,10 @@ Finally, you can test the model. At the same time, open another terminal, and:
 ```
 python test.py
 ```
-## Serverless model (You don't have to do these steps. It is just to show what i do to implement serverless, check the last section)
+
+## Cloud Deployment
+
+### Serverless model (You don't have to do these steps. It is just to show what i do to implement serverless, check the last section)
 
 For the serverless implementation after creating the Docker image, follow these steps:
 
@@ -232,7 +235,7 @@ For the serverless implementation after creating the Docker image, follow these 
 
 ### Testing the model serverless (If you want test the Serverless, do this)
 
-Open a new terminal and execute the testServerless.py file:
+Open a new terminal and execute the `testServerless.py` file:
 ```
 python testServerless.py
 ```

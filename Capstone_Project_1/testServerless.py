@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://localhost:8080/2015-03-31/functions/function/invocations'
+url = 'https://be5pvlc9th.execute-api.us-east-2.amazonaws.com/test/predict'
 
 data = {"customer" : {
     "Bilirubin": -0.707522,

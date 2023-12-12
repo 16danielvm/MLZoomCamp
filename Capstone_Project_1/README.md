@@ -47,7 +47,7 @@ In the project development, I chose to use the `ydata-profiling` library for exp
 
 `ydata-profiling` stands out for its ability to generate comprehensive reports covering various aspects of the data. From value distribution to key statistics, the library offers a complete overview that facilitates the identification of patterns, anomalies, and trends in the data. Moreover, its capability to highlight null values, provide clear visualizations, and summarize descriptive statistics significantly contributes to streamlining the analysis process.
 
-In eda folder, you can find the notebook_eda file where I showed how implement the `ydata-profiling`, the **insights** that i found with it, the **data preparation**, implementing of **feature selection**, **deployment of several algorithms**, and the **selection of final model*. Also, you can see the eda_report exported in html file for a better view of the report and the **standarizing features** file.
+In eda folder, you can find the notebook_eda file where I showed how implement the `ydata-profiling`, the **insights** that i found with it, the **data preparation**, implementing of **feature selection**, **deployment of several algorithms**, and the **selection of final model**. Also, you can see the eda_report exported in html file for a better view of the report and the **standarizing features** file.
 
 ## Getting Started
 

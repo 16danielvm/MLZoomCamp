@@ -1,8 +1,8 @@
-import tensorflow.lite as tflite # se supone que se comenta este
-# import tflite_runtime.interpreter as tflite # PARA EL DOCKERFILE DESCOMENTAR ESTE!! Y COMENTAR EL DE ARRIBA
+# import tensorflow.lite as tflite # se supone que se comenta este
+import tflite_runtime.interpreter as tflite # PARA EL DOCKERFILE DESCOMENTAR ESTE!! Y COMENTAR EL DE ARRIBA
 from keras_image_helper import create_preprocessor
 
-interpreter = tflite.Interpreter(model_path='../final_model/mask-model.tflite')
+interpreter = tflite.Interpreter(model_path='mask-model.tflite')
 interpreter.allocate_tensors()
 
 preprocessor = create_preprocessor('xception', target_size=(224, 224))
@@ -12,7 +12,7 @@ output_index = interpreter.get_output_details()[0]['index']
 
 classes =['WithMask', 'WithoutMask']
 
-# url = 'http://bit.ly/mlbookcamp-pants'
+# url = 'https://raw.githubusercontent.com/16danielvm/MLZoomCamp/master/Capstone_Project_2/final_model/45.png'
 
 def predict(url):
     

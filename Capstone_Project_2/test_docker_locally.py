@@ -8,3 +8,8 @@ data = {'url': 'https://raw.githubusercontent.com/16danielvm/MLZoomCamp/master/C
 
 result = requests.post(url, json=data).json()
 print(result)
+print('------------------')
+if result['WithMask'] > result['WithoutMask']:
+    print('Relax! This person is wearing a mask')
+else:
+    print('ALERT! This person is not wearing a mask')

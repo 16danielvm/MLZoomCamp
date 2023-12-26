@@ -1,5 +1,5 @@
-# import tensorflow.lite as tflite # se supone que se comenta este
-import tflite_runtime.interpreter as tflite # PARA EL DOCKERFILE DESCOMENTAR ESTE!! Y COMENTAR EL DE ARRIBA
+import tensorflow.lite as tflite # se supone que se comenta este
+# import tflite_runtime.interpreter as tflite # PARA EL DOCKERFILE DESCOMENTAR ESTE!! Y COMENTAR EL DE ARRIBA
 from keras_image_helper import create_preprocessor
 
 interpreter = tflite.Interpreter(model_path='mask-model.tflite')

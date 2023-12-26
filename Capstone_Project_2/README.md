@@ -155,7 +155,3 @@ Finally, you will have the mask detection.
 Check this [video](https://youtu.be/IpxL_JW0bnM) to test the model serverless with whatever image that you want: 
 
 [![Video](https://img.youtube.com/vi/IpxL_JW0bnM/mqdefault.jpg)](https://youtu.be/IpxL_JW0bnM)
-
-## Citation 
-
-1. Walter Reade, Ashley Chow. (2023). Multi-Class Prediction of Cirrhosis Outcomes. Kaggle. https://kaggle.com/competitions/playground-series-s3e26

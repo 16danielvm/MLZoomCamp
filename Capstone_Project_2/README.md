@@ -1,26 +1,21 @@
 # *Mask detection* 
 
 ## Problem Description:
-
-
+The problem addressed by this project is the detection of face masks in images of individuals. With the increasing emphasis on public health and the need to maintain safety protocols, effectively identifying those wearing face masks has become crucial. This task can be challenging due to various poses, lighting conditions, and variations in the appearance of face masks.
 
 ### Context:
-
-
+In the current context of pandemics and viral outbreaks, the proper use of face masks is essential to prevent the spread of diseases. The automatic detection of face masks in images can be a valuable tool for monitoring, security, and public health applications. Furthermore, this technology could be integrated into surveillance systems to ensure compliance with health regulations.
 
 ### Significance:
-
-
+The significance of this project lies in its ability to improve efficiency and accuracy in identifying the use of face masks. By automating this task through image detection algorithms, safety measures can be implemented more effectively. This not only contributes to public health management but also has potential applications in environments such as airports, hospitals, and other places where compliance with hygiene standards is crucial. The precise detection of face masks in images not only has immediate benefits but also lays the groundwork for the development of related technologies in security and health.
 
 ## Data
 
-The data used in this project is from [Multi-Class Prediction of Cirrhosis Outcomes competition](https://www.kaggle.com/competitions/playground-series-s3e26) dataset, which can be found in [Kaggle](https://www.kaggle.com/)
+The data used in this project is from [12k facemask images](https://www.kaggle.com/datasets/ashishjangra27/face-mask-12k-images-dataset) dataset, which can be found in [Kaggle](https://www.kaggle.com/)
 
-Take a thorough look at the characteristics presented in the dataset, including their descriptions and the unit of measurement, if relevant.
+The dataset has 3 folders, `Train`, `Test`, and `Validation`, each one with 2 folders `WithMask` and `WithoutMask`.
 
-
-## Exploratory Data Analysis (EDA)
-
+IF YOU WANT TO RUN THIS, PLEASE DOWNLOAD THE DATASET INSIDE OF `Capstone_project_2/data/data/`
 
 ## Getting Started
 

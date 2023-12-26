@@ -2,7 +2,7 @@ import requests
 
 url = 'https://hvr312vdj8.execute-api.us-east-2.amazonaws.com/test_mask/predict'
 
-data = {'url': 'https://raw.githubusercontent.com/16danielvm/MLZoomCamp/master/Capstone_Project_2/final_model/45.png'}
+data = {'url': 'https://www.osfhealthcare.org/blog/wp-content/uploads/2020/10/business-woman-wearing-a-mask-f1.jpg'}
 
 result = requests.post(url, json=data).json()
 print(result)

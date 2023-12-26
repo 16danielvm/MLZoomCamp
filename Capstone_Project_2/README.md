@@ -150,6 +150,10 @@ python testServerless.py
 ```
 Finally, you will have the mask detection.
 
+### VIDEO explaining
+
+Check this [video](https://youtu.be/IpxL_JW0bnM) to test the model serverless with whatever image that you want: 
+
 ## Citation 
 
 1. Walter Reade, Ashley Chow. (2023). Multi-Class Prediction of Cirrhosis Outcomes. Kaggle. https://kaggle.com/competitions/playground-series-s3e26

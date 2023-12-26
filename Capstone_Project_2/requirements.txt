@@ -1,0 +1,7 @@
+keras==2.15.0
+keras-image-helper==0.0.1
+matplotlib==3.8.2
+numpy==1.26.2
+Pillow==10.1.0
+scipy==1.11.4
+tensorflow==2.15.0

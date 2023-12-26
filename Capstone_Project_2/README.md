@@ -24,16 +24,14 @@ This is a set of instructions on setting up this project locally. To get a local
 Prerequisites This is an example of how to list things you need to use this software.
 
 - Python
-- Pipenv
 - Docker 
 
 ### Installing Dependencies
 
-You have to install the **dependencies** with pipenv, as they are specified in the `Pipfile` and `Pipfile.lock`, by running the following commands:
+You have to install the **dependencies** with the `requirements.txt` file. Open a terminal inside of the principal folder and run the following command:
 
 ```
-pipenv install
-pipenv shell
+pip install -r requirements.txt
 ```
 
 ### Building the model

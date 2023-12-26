@@ -150,9 +150,9 @@ python testServerless.py
 ```
 Finally, you will have the mask detection.
 
-### VIDEO explaining
+## VIDEO EXPLAINING
 
-Check this [video]() to test the model serverless with whatever image that you want: 
+Check this [video](https://youtu.be/IpxL_JW0bnM) to test the model serverless with whatever image that you want: 
 
 [![Video](https://img.youtube.com/vi/IpxL_JW0bnM/mqdefault.jpg)](https://youtu.be/IpxL_JW0bnM)
 

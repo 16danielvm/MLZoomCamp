@@ -128,3 +128,5 @@ As observed, both techniques improved the model's performance, preventing it fro
 - Gutiérrez-García, J.O. [Código Máquina]. (2023, August 7). Qué son los Datos Desbalanceados y Cómo balancearlos usando Submuestreo y Sobremuestreo con Python [Video]. YouTube. [https://www.youtube.com/watch?v=2J90FG6QKL4&ab_channel=CodigoMaquina].
 - Cómo actuar ante el desbalance de datos | by Nicolás Arrioja Landa Cosio | Medium https://medium.com/@nicolasarrioja/c%C3%B3mo-actuar-ante-el-desbalance-de-datos-a0d64f2b9619
 - Gutiérrez-García, J.O. [Código Máquina]. (2022, August 20). Métricas para Clasificadores de Machine Learning: Matriz de Confusión, Precision, Accuracy, Recall, F1 [Video]. YouTube. [https://www.youtube.com/watch?v=uaGMk43XTOw&ab_channel=CodigoMaquina]
+
+#### *By Daniel Augusto Muñoz Viveros*
